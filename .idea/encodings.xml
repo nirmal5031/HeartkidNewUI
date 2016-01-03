@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/asset/css/bootstrap-theme.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asset/css/bootstrap-theme_index.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asset/css/bootstrap.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asset/css/bootstrap_index.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asset/css/checkbox.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asset/css/datepicker.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asset/css/font-awesome.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asset/css/heartkidstyle.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asset/css/jquery-ui.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asset/css/mystyle.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asset/css/newsticker.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asset/js/angular-ui-router.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asset/js/angular1.2.2.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asset/js/jquery-1.9.1.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asset/js/jquery-ui.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/images/arrow_dropdown.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/images/radibuttonimg.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/form-burdendisease-additional.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/form-burdendisease1.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/form-burdendisease2.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/form-burdendisease3.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/form-profile.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/form-treatmnt.html" charset="UTF-8" />
+  </component>
+</project>
