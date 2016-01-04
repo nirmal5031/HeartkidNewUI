@@ -19,9 +19,18 @@
     font-weight: normal;
     font-style: normal;
 }
-.control { margin:5px 0 0 18px !important; }
+.control { 
+ float: left;
+ margin: 5px 0 0 18px !important;
+ width: 54%;
+}
+.control-label{
+
+	float: left;
+    margin: 5px 0 0 8px !important;
+    width: 65%;
+	}
 .control em{ color:red; font-style:normal;}
-.control-label{ margin:5px 0 0 1px !important; }
 .control-label em{ color:red; font-style:normal;}
 .col-xs-7 {
   width: 58.33333333%;
@@ -4245,14 +4254,26 @@ padding-left: 599x;
 					{float:right; padding-left:1.4em;}
 					.will-logo
 					{float:right; padding-left:1em;}
-					
+						
+					.control { 
+					   float: left;
+					   margin: 5px 0 0 18px !important;
+					   width: 65%;
+					}
+					.control-label{
+
+					float: left;
+					margin: 5px 0 0 8px !important;
+					width: 65%;
+				}
 				.homeImageLink {
-    left: 14px;
-    position: absolute;
-    text-align: center;
-    top: 40%;
-    width: 50%;
-}
+				    left: 14px;
+				    position: absolute;
+				    text-align: center;
+				    top: 40%;
+				    width: 50%;
+				}
+				
 
 					#footer .copyright li {
 						border: 0;
