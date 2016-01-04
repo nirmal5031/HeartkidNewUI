@@ -1,8 +1,91 @@
-<div class="col-lg-12" style="width: 85%" ng-controller="burdendiseaseController">
+<section id="two" class="wrapper alt style2">
+        <section class="spotlight">
+            <div class="image">
+                <h2>Patient Details</h2>
+                 <div class="control">
+                    <label class=" col-sm-2">Title</label>
+                    <select  name="titleselect" class="textfeildname yellow arrowupdown text">
+                        <option value="">--Select--</option> <!-- not selected / blank option -->
+                    </select>
+                </div>
+				<div class="control">
+                    <label class=" col-sm-2">First Name <em>*</em></label>
+                    <input type="text" name="firstname" value=""  class="textfeildname yellow" />
+				</div>
+				<div class="control">
+                    <label class=" col-sm-2">Last Name <em>*</em></label>
+                    <input type="text"  name="lastname" value="" class="textfeildname yellow"/>
+                </div>
+				<div class="control">
+                    <label class=" col-sm-2">Sex</label>
+                    <select  name="sexselect" class="textfeildname yellow arrowupdown text">
+                        <option value="">--Select--</option> <!-- not selected / blank option -->
+                    </select>
+                </div>
+				<div class="control">
+                    <label class=" col-sm-2">age</label>
+                    <select  name="sexselect" class="textfeildname yellow arrowupdown text">
+                        <option value="">--Select--</option> <!-- not selected / blank option -->
+                    </select>
+                </div>
+				<div class="control">
+                    <label class=" col-sm-21">Date of Birth<em>*</em></label>
+                    <input type="text" id="" readonly="true" class="textfeildname yellow datepicker text">        
+                </div>
+			   <div class="control">
+                    <label class=" col-sm-22 ">Country of birth</label>
+                    <select  name="lstofcountryArray" class="textfeildname yellow arrowupdown text-carer" >
+                        <option value="">--Select--</option> <!-- not selected / blank option -->
 
-    <div class="btn-group surveybutton" style="">
-        <button  style="" ui-sref="form.treatment" class="btn btn-primary">Previous</button>
-        <button  style="" ui-sref="form.burden-add" class="btn btn-default">Next</button>
-    </div>
-    <br><br>
-</div>
+                    </select>
+            </div>
+			<div class="control">
+                    <label class=" col-sm-22 ">Ethinicy</label>
+                    <select  name="lstofcountryArray" class="textfeildname yellow arrowupdown text-carer" >
+                        <option value="">--Select--</option> <!-- not selected / blank option -->
+
+                    </select>
+            </div>
+			<div class="control">
+                    <label class=" col-sm-22 ">Language Spoken</label>
+                    <select  name="lstofcountryArray" class="textfeildname yellow arrowupdown text-carer" >
+                        <option value="">--Select--</option> <!-- not selected / blank option -->
+
+                    </select>
+            </div>
+            </div>
+            <div class="content">
+                <h2>Contact Details</h2>
+                               
+				<div class="control-label">
+                    <label class=" col-sm-22 ">Phone</label>
+                    <input type="text"  name="phone" value="" class="textfeildname yellow text-carer">                 
+                </div>
+				<div class="control-label">
+                    <label class=" col-sm-22">eMail <em>*</em></label>
+                    <input type="text" name="firstname" value=""  class="textfeildname yellow text-carer" />
+				</div>
+				<div class="control-label">
+                    <label class=" col-sm-22 ">PostCode<em>*</em></label>
+                    <input type="text" name="postcode" maxlength="4" value="" id="postcde"  class="textfeildname text-carer"/>
+                </div>
+				<div class="control-label">
+                    <label class=" control-label ">State</label>
+                    <select  name="state" class="textfeildname yellow arrowupdown text-carer">
+                        <option value="">--Select--</option> <!-- not selected / blank option -->
+                    </select>
+                </div>
+                
+			
+        </section>
+    </section>
+	<div style="margin-bottom: 5%;"></div>
+				<div class="col-xs-6 col-xs-offset-3">     
+						<a ui-sref="home" class="button special input">Previous</a>
+                    </div>
+                    <div class="col-xs-6 col-xs-offset-3 col-xs-7">
+                        <a ui-sref="form.treat" class="button special input">Next</a>
+                    </div>
+				<div style="margin-bottom: 15%;"></div>
+                   
+                  
