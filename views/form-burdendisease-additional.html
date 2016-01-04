@@ -54,8 +54,8 @@
                         <tbody>
                         <tr style=" padding: 4px; " >
                             <td style="" class="col-md-1 barstylenode5 {{myClass}}" ng-repeat="node in nodes1to5"
-                                ng-click="chdlivingimpact(node.id)"
-                                ng-model="formData.changeimpactchd" ng-class="getchdimpaClass(node.id)"   ng-mouseenter="myClass='redclass'"
+                                ng-click="changeinwork(node.id)"
+                                ng-model="formData.changeimpactchd" ng-class="changeinworkClass(node.id)"   ng-mouseenter="myClass='redclass'"
                                 ng-mouseleave="myClass = ''">
                                 {{node.rate}}
                             </td>
@@ -84,13 +84,13 @@
 
                 </div>
                 <div class="control">
-                    <label class=" col-sm-2" style="width: 100%;">How many days missed of work / school last year due to symptoms relating to your heart condition? <em>*</em></label>
+                    <label class=" col-sm-2" data-toggle="tooltip" title="Hooray!" style="width: 100%;">How many days missed of work / school last year due to symptoms relating to your heart condition? <em>*</em></label>
 
                     <table class="table bs-example" style="padding: 4px;">
 
                         <tbody>
                         <tr style=" padding: 4px; " >
-                            <td style="" class="col-md-1 barstyle {{myClass}}" ng-repeat="node in nodes"
+                            <td  style="" class="col-md-1 barstyle {{myClass}}" ng-repeat="node in nodes"
                                 ng-click="missschooldays(node.id)"
                                 ng-model="formData.missschooldays" ng-class="missschooldaysClass(node.id)"   ng-mouseenter="myClass='redclass'"
                                 ng-mouseleave="myClass = ''" required>
@@ -114,7 +114,7 @@
                         <tr style=" padding: 4px; " >
                             <td style="" class="col-md-1 barstyle {{myClass}}" ng-repeat="node in nodes"
                                 ng-click="carermisseddays(node.id)"
-                                ng-model="formData.missschooldays" ng-class="missschooldaysClass(node.id)"   ng-mouseenter="myClass='redclass'"
+                                ng-model="formData.miscarerchooldays" ng-class="carermisseddaysClass(node.id)"   ng-mouseenter="myClass='redclass'"
                                 ng-mouseleave="myClass = ''" required>
                                 {{node.rate}}
                             </td>
@@ -130,11 +130,11 @@
                     <table class="radio-btn"><tr><td style=""><input type="radio" ng-model="formData.eductnchallng" name="eductnchallng" id="eductnchallng" class="" value="yes" required/>  <label for="eductnchallng" onclick>Yes</label></td><td><input type="radio" ng-model="formData.eductnchallng" name="eductnchallng" id="eductnchallngno" class=""  value="no" required/><label for="eductnchallngno" class="">No</label></td></tr></table>
                 </div>
 
-                <div class="control" >
+                <div class="control" ng-show="formData.eductnchallng=='yes'">
                     <label class=" col-sm-2"  style="width: 100%;">Has this meant falling behind in school grades ? </label>
                     <table class="radio-btn"><tr><td style=""><input type="radio" ng-model="formData.schoolgrd" name="schoolgrd" id="radio6" class="" value="yes" required/>  <label for="radio6" onclick>Yes</label></td><td><input type="radio" ng-model="formData.schoolgrd" name="schoolgrd" id="radio39" class=""  value="no" required/><label for="radio39" class="">No</label></td></tr></table>
                 </div>
-                <div class="control" >
+                <div class="control" ng-show="formData.schoolgrd=='yes'">
                     <label class=" col-sm-2"  style="width: 100%;">Has this been formally assessed?  </label>
                     <table class="radio-btn"><tr><td style=""><input type="radio" ng-model="formData.formalassess" name="formalassess" id="radio16" class="" value="yes" required/>  <label for="radio16" onclick>Yes</label></td><td><input type="radio" ng-model="formData.formalassess" name="formalassess" id="radio9" class=""  value="no" required/><label for="radio9" class="">No</label></td></tr></table>
                 </div>
@@ -155,19 +155,19 @@
                     <textarea type="textarea" placeholder="Describe the impact" name ="condimpactschooldesc"  class="textareastyle" style="width: 75%;"  ng-model="formData.condimpactschooldesc"></textarea>
 
                 </div>
-                <div style="margin-bottom: 5%;"></div>
 
-                <div class="col-xs-6 col-xs-offset-3">
-                    <a ui-sref="form.burden-1" class="btn btn-block btn-info">
-                        <span class="glyphicon glyphicon-circle-arrow-left"></span>Previous
-                    </a>
-                </div>
 
-                <div class="col-xs-6 col-xs-offset-3 col-xs-7">
-
-                    <a ui-sref="form.burden-2" class="btn btn-block btn-info" ng-disabled="userForm.$invalid" ng-click="savesurveyregistration()">
-                        Next  <span class="glyphicon glyphicon-circle-arrow-right"></span>
-                    </a></br>
-                </div>
+    <div class="btn-group surveybutton" style="">
+        <button  style="" ui-sref="form.burden-1" class="btn btn-primary">Previous</button>
+        <button  style="" ui-sref="form.burden-2"  ng-disabled="userForm.$invalid" class="btn btn-default" ng-click="savesurveyregistration()">Next</button>
+    </div>
+    <br><br>
         </div>
+
+<script>
+    $(document).ready(function(){
+        alert("initialie tool tipo");
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+    </script>
 

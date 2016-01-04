@@ -23,8 +23,22 @@
              <option value="">&#45;&#45;Select&#45;&#45;</option> &lt;!&ndash; not selected / blank option &ndash;&gt;
 
          </select>-->
-        <table class="radio-btn"><tr><td style=""><input type="radio" ng-model="formData.relationimpact" name="relationimpact" id="relationimpact" class="" value="yes" required/>  <label for="relationimpact" onclick>Yes</label></td><td><input type="radio" ng-model="formData.relationimpact" name="relationimpact" id="relationimpactNO" class=""  value="no" required/><label for="relationimpactNO" class="">No</label></td></tr></table>
+     <!--   <table class="radio-btn"><tr><td style=""><input type="radio" ng-model="formData.relationimpact" name="relationimpact" id="relationimpact" class="" value="yes" required/>  <label for="relationimpact" onclick>Yes</label></td><td><input type="radio" ng-model="formData.relationimpact" name="relationimpact" id="relationimpactNO" class=""  value="no" required/><label for="relationimpactNO" class="">No</label></td></tr></table>
+-->
 
+        <table class="table bs-examplenode5">
+
+            <tbody>
+            <tr style=" padding: 4px; " >
+                <td style="" class="col-md-1 barstylenode5 {{myClass}}" ng-repeat="node in nodes1to5"
+                    ng-click="relationimpact(node.id)"
+                    ng-model="formData.relationimpact" ng-class="getClassrelimpact(node.id)"   ng-mouseenter="myClass='redclass'"
+                    ng-mouseleave="myClass = ''">
+                    {{node.rate}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
     <div class="control" >
         <label class=" col-sm-2"  style="width: 100%;">How many siblings / children do you have?</label>
@@ -44,7 +58,7 @@
         </table>
 
     </div>
-    <div class="control"  >
+    <div class="control"  ng-show="">
         <label class=" col-sm-2"  style="width: 100%;">How do you rate the impact of having a sibling with CHD? </label>
 
         <table class="table bs-examplenode5" style=" padding: 4px;  margin-top: 2%;">
@@ -84,7 +98,7 @@
             </tbody>
         </table>
 
-    </div></br>
+    </div>
     <div class="headerpane">Quality of care in health system</div>
 
     <div class="control">
@@ -157,7 +171,7 @@
          </tr>
          </tbody>
      </table>-->
-    <input type="text" ng-model="formData.transpaedtoadult" style="width: 80px;height:50px; margin-top: 20px;margin-bottom: 30px;">
+    <input type="text" ng-model="formData.transpaedtoadult" style="width: 80px;height:50px; margin-top: 20px;margin-bottom: 30px; background-color: #fff;color: black; border: 1px solid grey">
     <span ng-show="userForm.paediatricadult.$dirty && userForm.paediatricadult.$error.required" class="help-block" style="margin: auto;width: 55%;padding: 10px;">This field is mandatory</span>
 
 </div>
@@ -238,7 +252,7 @@
     </table>
 
     <div class="control"  >
-        <label class=" col-sm-2"  style="width: 100%;">Would you have like to have a dedicated CHD nurse involved with your care? </label>
+        <label class=" col-sm-2"  style="width: 100%;">Would you  like to have a dedicated CHD nurse involved with your care? </label>
 
 
       <!--  <select  name="dedicatedCHDnurse" ng-model="formData.dedicatedCHDnurse" ng-change="dedicatedCHDnurse()" class="textfeildname yellow arrowupdown"  style="width:15%; " ng-options="dednurse for dednurse in yesnoArray" >
@@ -249,16 +263,11 @@
         <table class="radio-btn"><tr><td style=""><input type="radio" ng-change="dedicatedCHDnurse()" ng-model="formData.dedicatedCHDnurse" name="dedicatedCHDnurse" id="radio72" class="" value="yes" required/>  <label for="radio72" onclick>Yes</label></td><td><input type="radio" ng-model="formData.dedicatedCHDnurse" name="dedicatedCHDnurse" id="radio82" class=""  value="no" required/><label for="radio82" class="">No</label></td></tr></table>
 
     </div>
-    </br>
 
-    <div class="col-xs-6 col-xs-offset-3">
-        <a ui-sref="form.burden-add" class="btn btn-block btn-info">
-            <span class="glyphicon glyphicon-circle-arrow-left"></span>Previous
-        </a>
+
+    <div class="btn-group surveybutton" style="">
+        <button  style="" ui-sref="form.burden-add" class="btn btn-primary">Previous</button>
+        <button  style="" ui-sref="form.burden-3" class="btn btn-default"  ng-disabled="userForm.$invalid" ng-click="savesurveyregistration()">Next</button>
     </div>
-    <div class="col-xs-6 col-xs-offset-3 col-xs-7" >
-        <a ui-sref="form.burden-3" class="btn btn-block btn-info" ng-disabled="userForm.$invalid" ng-click="savesurveyregistration()">
-            Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
-        </a>
-    </div>
-</div></div>
+    <br><br>
+</div>

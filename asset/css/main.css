@@ -1,9 +1,25 @@
 @font-face {
-  font-family: ProximaNova;
-  src: local("ProximaNova-Black"),
-       local("ProximaNova-Bold"),
-       url(ProximaNova-Black.otf);
+    font-family: 'ProximaNova-Light';
+    src: url('../fonts/proximanovalight.eot');
+    src: url('../fonts/proximanovalight.eot?#iefix') format('embedded-opentype'), url('../fonts/proximanovalight.woff') format('woff'), url('../fonts/proximanovalight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
+@font-face {
+    font-family: 'ProximaNova-Regular';
+    src: url('../fonts/ProximaNovaRegular.eot');
+    src: url('../fonts/ProximaNovaRegular.eot?#iefix') format('embedded-opentype'), url('../fonts/ProximaNovaRegular.woff') format('woff'), url('../fonts/ProximaNovaRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ProximaNova-Semibold';
+    src: url('../fonts/ProximaNova-Semibold.eot');
+    src: url('../fonts/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/ProximaNova-Semibold.woff') format('woff'), url('../fonts/ProximaNova-Semibold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .homeImageLink {
 	position: absolute;
 	top: 30%;
@@ -1885,8 +1901,8 @@ padding-left: 599x;
 		max-width: 100%;
 		margin-bottom: 5px;
 		font-weight:500;
-		font-size:13px;
-		font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size:16px;
+		font-family:ProximaNova-Regular;
 	}
 	input[type="text"],
 	input[type="password"],
@@ -2455,24 +2471,23 @@ padding-left: 599x;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		background-color: transparent;
-		border: 0;
+        border: 2px solid #0072bb;
 		box-shadow: inset 0 0 0 2px #fff;
-		color: #fff;
+        color: #0072bb;
 		cursor: pointer;
 		display: inline-block;
-		font-size: 0.8em;
 		font-weight: 700;
 		height: 3.125em;
-		letter-spacing: 0.225em;
-		line-height: 3.125em;
-		padding: 0 2.75em;
 		text-align: center;
 		text-decoration: none;
 		text-transform: none;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-	}
+        width: 33%;
+        margin-right: 2%;
+
+    }
 
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,
@@ -2577,8 +2592,8 @@ padding-left: 599x;
 			input[type="button"],
 			button,
 			.button {
-				height: 3.75em;
-				line-height: 3.75em;
+			/*	height: 3.75em;
+				line-height: 3.75em;*/
 			}
 
 		}

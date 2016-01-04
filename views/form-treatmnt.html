@@ -10,31 +10,36 @@
 
             <div class="headerpane">Quality of your care in the health system</div>
             <div class="control">
-            <p class="conctfrmt">Do you know what your specific condition is called? <em>*</em></p>
+            <p class="conctfrmt" ng-class="{ 'has-error': userForm.yesnoselect.$dirty && userForm.yesnoselect.$error.required }">Do you know what your specific condition is called? <em>*</em></p>
                 <table class="radio-btn"><tr><td style=""><input type="radio" ng-model="formData.conditioncalld" name="conditioncalld" id="radio61" class="" value="yes" required/>  <label for="radio61" onclick>Yes</label></td><td><input type="radio" ng-model="formData.conditioncalld" name="conditioncalld" id="radio71" class=""  value="no" required/><label for="radio71" class="">No</label></td></tr></table>
+                <span ng-show="userForm.conditioncalld.$dirty && userForm.conditioncalld.$error.required" class="help-block" style="margin: auto;width: 55%;padding: 10px;">Please Select Specific Condition</span>
 
         </div>
 
-            <div class="control">
+            <div class="control" ng-show="formData.conditioncalld=='yes'">
                 <p class="conctfrmt">What congenital heart condition were you diagnosed with? <em>*</em></p>
-                <select  name="heartcondsselect" ng-model="formData.heartconds" class="textfeildname yellow arrowupdown dropdownstyle"  style="" ng-options="heartconds for heartconds in heartcondsArray">
+                <select  name="heartcondsselect" ng-model="formData.heartconds" class="textfeildname yellow arrowupdown dropdownstyle" ng-required="formData.conditioncalld=='yes'" style="width: 300px;" ng-options="heartconds for heartconds in heartcondsArray">
                     <option value="">--Select--</option> <!-- not selected / blank option -->
                 </select>
+                <span ng-show="userForm.heartcondsselect.$dirty && userForm.heartcondsselect.$error.required" class="help-block" style="margin: auto;width: 55%;padding: 10px;">Please Select heart Condition</span>
+
             </div>
 
             <div class="control">
                 <p class="conctfrmt">Have you had corrective surgery on your heart?<em>*</em></p>
-                <select  name="yesnoselect" ng-model="formData.surgeryheld" ng-change="surgeryheldchange()" class="textfeildname dropdownstyle yellow arrowupdown"  style="width:200px; border: 1px solid #ebe8ec; margin-bottom: 30px; -moz-appearance: none;-webkit-appearance: none;appearance:none;" ng-options="yesno for yesno in yesnoArray" required >
-                    <option value="">--Select--</option> <!-- not selected / blank option -->
-                </select>
+               <!-- <select  name="yesnoselect" ng-model="formData.surgeryheld" ng-change="surgeryheldchange()" class="textfeildname dropdownstyle yellow arrowupdown"  style="width:200px; border: 1px solid #ebe8ec; margin-bottom: 30px; -moz-appearance: none;-webkit-appearance: none;appearance:none;" ng-options="yesno for yesno in yesnoArray" required >
+                    <option value="">--Select--</option> &lt;!&ndash; not selected / blank option &ndash;&gt;
+                </select>-->
+                <table class="radio-btn"><tr><td style=""><input type="radio" ng-model="formData.surgeryheld" name="surgeryheld" id="surgeryheld" class="" value="yes" required/>  <label for="surgeryheld" onclick>Yes</label></td><td><input type="radio" ng-model="formData.surgeryheld" name="surgeryheld" id="surgeryheld2" class=""  value="no" required/><label for="surgeryheld2" class="">No</label></td></tr></table>
+
             </div>
 
-            <div class="control">
+            <div class="control" ng-show="formData.surgeryheld=='yes'">
                 <p class="conctfrmt">If you had surgery, was it delayed? <em>*</em></p>
-                <table class="radio-btn"><tr><td style=""><input type="radio" ng-model="formData.surgerydelay" name="surgerydelay" id="rc1" class="" value="yes" required/>  <label for="rc1" onclick>Yes</label></td><td><input type="radio" ng-model="formData.surgerydelay" name="surgerydelay" id="rc2" class=""  value="no" required/><label for="rc2" class="">No</label></td></tr></table>
+                <table class="radio-btn"><tr><td style=""><input type="radio" ng-required="formData.surgeryheld=='yes'" ng-model="formData.surgerydelay" name="surgerydelay" id="rc1" class="" value="yes" required/>  <label for="rc1" onclick>Yes</label></td><td><input type="radio" ng-model="formData.surgerydelay" name="surgerydelay" id="rc2" class=""  value="no" required/><label for="rc2" class="">No</label></td></tr></table>
 
             </div>
-            <div class="control">
+            <div class="control" ng-show="formData.surgerydelay=='yes'">
                 <div class="conctfrmt">
                     <label>How many delays to the corrective surgery did you experience ? </label>
                     <table class="table bs-example" style="" >
@@ -52,9 +57,10 @@
                 </div>
 
             </div>
-    <br>
+    <div class="btn-group surveybutton" style="">
+        <button  style="" ui-sref="form.profile" class="btn btn-primary">Previous</button>
+        <button  style="" ui-sref="form.burden-1" ng-disabled="userForm.$invalid" ng-click="savesurveyregistration()" class="btn btn-default">Next</button>
+    </div>
+    <br><br>
+
 </div>
-
-<style>
-
-</style>

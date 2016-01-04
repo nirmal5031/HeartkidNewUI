@@ -41,6 +41,9 @@ angular.module('formApp', ['ui.router'])
             .state('form.burden-add', {
                 url: '/bur4',
                 templateUrl: 'views/form-burdendisease-additional.html'
+            }).state('form.thankyou', {
+                url: '/thank',
+                templateUrl: 'views/confirmation.html'
             })
 
         $urlRouterProvider.otherwise('/form/research');
@@ -365,7 +368,8 @@ alert("calling burdern disease vontroller");
         $scope.scale1to20 = ["1", "2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20",">20"];
         $scope.yesnoArray = ["Yes", "No"];
         $scope.rating = 5;
-        $scope.costinvolvedArray= ["< 100","200 – 300","400 – 500","> 500"];
+        $scope.costinvolvedArray= ["< 100","200 ï¿½ 300","400 ï¿½ 500","> 500"];
+        $scope.heartcondsArray = ["Atrial septal defect","Ventricular septal defect","Atrioventricular septal defect","Patent ductus arteriosus","Pulmonary vein anomaly","Tricuspid atresia","Ebsteinâ€™s anomaly ","Dysplastic tricuspid valve","Pulmonary stenosis","Pulmonary atresia","Tetralogy of Fallot","Abnormal mitral valve","Aortic stenosis","Coarctation of the aorta or interrupted aorta","Truncus arteriosus","Bicuspid aortic valve","Hypoplastic left heart syndrome","Transposition of the great arteries","Congenitally corrected transposition of the great arteries","Double-outlet right ventricle","Double-inlet left ventricle","Double-inlet right ventricle","Atrial isomerism (left or right)","None of the above"];
 
         $scope.change_condition = function() {
             var selectd = $scope.formData.conditioncalld;
@@ -461,6 +465,7 @@ alert("calling burdern disease vontroller");
 
         $scope.myClass = [];
         $scope.nodes = [
+            {id: 0,rate: "0" },
             {id: 1,rate: "1" },
             {id: 2, rate: "2" },
             {id: 3, rate: "3" },
@@ -470,6 +475,7 @@ alert("calling burdern disease vontroller");
 
         ];
         $scope.nodes1to5 = [
+            {id: 0,rate: "0" },
             {id: 1,rate: "1" },
             {id: 2, rate: "2" },
             {id: 3, rate: "3" },
@@ -499,7 +505,6 @@ alert("calling burdern disease vontroller");
 
         $scope.nodeclick = function(node) {
             $scope.formData.moneyspentinyear = node;
-            $scope.myClass = "test";
             $scope.getClass = function (nodeclass) {
 
                 return {
@@ -508,19 +513,39 @@ alert("calling burdern disease vontroller");
                 }
             }
         }
-
-
-        $scope.nodeclick = function(node) {
-            $scope.formData.heartdoc = node;
-            $scope.myClass = "test";
-            $scope.getClass = function (nodeclass) {
-
+        $scope.localdoctor = function(node) {
+            $scope.formData.localdoctorvisit = node;
+            $scope.getLocalDoc = function (nodeclass) {
                 return {
                     bluebarrating: node === nodeclass
 
                 }
             }
         }
+
+
+        $scope.carermisseddays = function(node) {
+            $scope.formData.miscarerchooldays = node;
+            $scope.carermisseddaysClass = function (nodeclass) {
+                return {
+                    bluebarrating: node === nodeclass
+
+                }
+            }
+        }
+
+
+        $scope.changeinwork = function(node) {
+            $scope.formData.changeimpactchd = node;
+            $scope.changeinworkClass = function (nodeclass) {
+                return {
+                    bluebarrating: node === nodeclass
+
+                }
+            }
+        }
+
+
         $scope.emergdept = function(emergnode) {
             $scope.formData.emergdeptvisit = emergnode;
             $scope.getenerClass = function (emernodeclass) {
@@ -555,6 +580,19 @@ alert("calling burdern disease vontroller");
 
             }
         }
+        $scope.relationimpact = function(node) {
+            $scope.formData.relationimpact = node;
+            $scope.getClassrelimpact = function (nodeclass) {
+                return {
+                    bluebarrating: node === nodeclass
+
+                }
+
+
+            }
+        }
+
+
         $scope.missschooldays = function(node) {
             $scope.formData.missschooldays = node;
             $scope.missschooldaysClass = function (nodeclass) {
